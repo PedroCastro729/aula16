@@ -9,19 +9,17 @@ struct filme{
 
 int main(void){
     struct filme movie;
-    char titulo[50];
-    char estilo[50];
-    int lancamento;
     FILE *ptrFilmes = NULL;
 
     printf("Digite o nome do filme: ");
-    fgets(titulo, 49, stdin);
+    fgets(movie.nome, 49, stdin);
 
     printf("Digite o estilo do filme: ");
-    fgets(estilo, 49, stdin);
+    fgets(movie.genero, 49, stdin);
 
     printf("Digite o ano de lançamento: ");
-    scanf("%d", &lancamento);
+    scanf("%d", &movie.ano);
+    getchar();
 
     ptrFilmes = fopen("filmes.txt", "wb");
     if(ptrFilmes == NULL){
